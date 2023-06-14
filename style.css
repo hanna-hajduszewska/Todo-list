@@ -1,0 +1,168 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	font-size: 20px;
+}
+
+body {
+	background-color: rgb(96 95 101);
+	font-family: 'Montserrat', sans-serif;
+	background-image: url('./icons/lightmode_jpg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	color: rgb(0, 0, 0);
+}
+
+body.dark {
+	background-color: rgb(9, 7, 21);
+	background-image: url('./icons/darkmode_jpg.jpg');
+	color: rgb(241, 241, 241);
+}
+
+.headingContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 80vw;
+	position: absolute;
+	top: 8vw;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.headingContainer h1 {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.sun {
+	display: none;
+}
+
+.dark .sun {
+	display: block;
+}
+
+.dark .moon {
+	display: none;
+}
+
+.todoTasksWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	width: 80vmin;
+	position: absolute;
+	top: 30vmin;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: 600;
+	max-width: 700px;
+}
+
+.createTodoTask {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem 1rem;
+	background-color: rgb(217, 217, 217);
+	border-radius: 10px;
+	transition: all 0.2s ease;
+}
+
+.dark .createTodoTask {
+	background-color: rgb(33 41 57);
+}
+
+.addTaskInput {
+	width: 85%;
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: 500;
+	color: inherit;
+	background-color: inherit;
+	border: none;
+	border-bottom: 1.5px solid black;
+}
+
+.addTaskInput:focus {
+	outline: none;
+}
+
+.dark .addTaskInput {
+	border-bottom: 1.5px solid rgb(217, 217, 217);
+}
+
+.svgBtn {
+	background-color: transparent;
+	border: none;
+	fill: black;
+	transition: all 0.2s ease;
+}
+
+.svgBtn svg {
+	width: 42px;
+}
+
+.dark .svgBtn {
+	fill: rgb(217, 217, 217);
+}
+
+.todoWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.todoTask {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	background-color: rgb(217, 217, 217);
+	border-radius: 10px;
+	transition: all 0.2s ease;
+}
+
+.dark .todoTask {
+	background-color: rgb(33 41 57);
+}
+
+.text {
+	width: 85%;
+}
+
+.svgBtn:hover {
+	opacity: 0.5;
+	transform: scale(1.2);
+	cursor: pointer;
+}
+
+@media (max-width: 600px) {
+	:root {
+		font-size: 15px;
+	}
+	.svgBtn svg {
+		width: 30px;
+	}
+	.todoTasksWrapper {
+		width: 80vw;
+	}
+}
+
+@media (max-width: 700px) and (orientation: landscape) {
+	.todoTasksWrapper {
+		width: 80vw;
+		top: 35vmin;
+	}
+	:root {
+		font-size: 15px;
+	}
+	.svgBtn svg {
+		width: 30px;
+	}
+}
